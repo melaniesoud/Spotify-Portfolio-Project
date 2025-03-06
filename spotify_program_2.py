@@ -1,3 +1,4 @@
+# A program used to analysze Spotify data.
 
 import numpy as np
 import matplotlib.pyplot as plt
