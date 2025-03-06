@@ -1,22 +1,11 @@
-# spotify_program.py
-# A terminal-based application to process and plot data based on given user input and provided data values.
-# You may only import numpy, matplotlib, and math. 
-# No other modules may be imported. Only built-in functions that support compound data structures, user entry, or casting may be used.
-# Remember to include docstrings for any functions/classes, and comments throughout your code.
-#
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ******************************************************************************************************
-# Data is imported from the included csv file. You may not modify the content, order, or location of the csv file.
-# Do not modify the code in this section.
-# You may not hardcode (manually enter in the code) any other data.
 column_names = ['title', 'artist(s)', 'release', 'num_of_streams', 'bpm', 'key', 'mode', 'danceability', 'valence', 'energy', 'acousticness', 'instrumentalness', 'liveness', 'speechiness']
 data = np.genfromtxt('spotify_data.csv', delimiter = ',', skip_header = True, dtype = str)
-# ******************************************************************************************************
-# DEFINE FUNCTIONS HERE
 
+# DEFINE FUNCTIONS
 def feature_stats(input_value):
     '''
     The purpose of this function is to take in an input value that corresponds to a position in each row in the given data set 
@@ -85,19 +74,7 @@ def age_stats(input_value):
     print(f'Artist of oldest song: {artist[0,0]}')   # The desired output statement is printed as the artist data in the fomrat of a 1 by 1 matrix (represented by artist[0,0]).
     print(f'Key and mode of oldest song: {key[0,0]} {mode[0,0]}')  # The desired output statement is printed as the key and mode data in the fomrat of a 1 by 1 matrix (represented by key[0,0] and mode[0,0]).
 
-
-
-# ******************************************************************************************************
 # DEFINE MAIN CODE
-# Add your code within the main function. A docstring is not required for this function.
-
-# You may find the following hints helpful:
-# A list comprehension can be used to convert data values in a column and create a new array
-# e.g. converted_data = np.array([row[column_value] for row in data], dtype='float')
-# NumPy has many built-in functions/methods, including those for finding the index location of a value (e.g. argmax(), argmin(), etc.)
-# Refer to the NumPy and Matplotlib documentation for more
-
-
 def main():
     ''' 
 
@@ -154,9 +131,4 @@ def main():
         plt.legend(loc='upper right')    # The location of the legend is positioned at the upper-right corner.
         plt.show()                       # The graph is shown.
             
-            
-
-    
-
-
     # Create and print danceability vs. bpm plot
